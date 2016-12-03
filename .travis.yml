@@ -1,5 +1,5 @@
 language: c
-install: "sudo add-apt-repository -y ppa:avsm/ocaml42+opam12;sudo apt-get update;sudo apt-get install ocaml-nox"
+install: "sudo add-apt-repository -y ppa:avsm/ocaml42+opam12;sudo apt-get update;sudo apt-get install ocaml-nox camlp4"
 sudo: required
 script:
  - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
