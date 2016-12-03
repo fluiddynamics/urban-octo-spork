@@ -2,4 +2,9 @@ language: c
 install: "sudo apt-get install ocaml-nox"
 sudo: required
 script:
+ - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
+ - tar xf cd coq-8.5pl3.tar.gz
+ - cd cd coq-8.5pl3
+ - ./configure
+ - make
  - echo Hello, World!!
