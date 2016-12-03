@@ -1,3 +1,5 @@
 language: c
+install: "apt-get install ocaml-nox"
+sudo: required
 script:
  - echo Hello, World!!
