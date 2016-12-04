@@ -10,6 +10,7 @@ before_script:
 - make install
 script:
 - echo Hello, World!!
+- export PATH=$PATH:~/coq-inst/bin
 - coqc -v
 deploy:
   provider: s3
