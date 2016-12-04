@@ -1,5 +1,5 @@
 language: c
-install: "sudo apt-get install ocaml-nox camlp4"
+install: "sudo apt-get install ocaml-nox camlp4 camlp4-extra"
 sudo: required
 script:
  - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
