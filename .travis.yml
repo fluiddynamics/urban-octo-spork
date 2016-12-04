@@ -5,11 +5,6 @@ script:
  - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
  - tar xf coq-8.5pl3.tar.gz
  - cd coq-8.5pl3
- - which camlp4
- - ocamlc -version
- - ocamlc -where
- - camlp4orf -v
- - ls /usr/lib/ocaml/camlp4
- - ./configure
+ - ./configure -y
  - make
  - echo Hello, World!!
