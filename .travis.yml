@@ -1,12 +1,22 @@
 language: c
-install: "sudo apt-get install ocaml-nox camlp4 camlp4-extra"
+install: sudo apt-get install ocaml-nox camlp4 camlp4-extra
 sudo: required
 before_script:
- - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
- - tar xf coq-8.5pl3.tar.gz
- - cd coq-8.5pl3
- - ./configure -prefix /usr/local
- - make
- - sudo make install
+- wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
+- tar xf coq-8.5pl3.tar.gz
+- cd coq-8.5pl3
+- ./configure -prefix /usr/local
+- #make
+- sudo make install
 script:
- - echo Hello, World!!
+- echo Hello, World!!
+deploy:
+  provider: s3
+  access_key_id: AKIAJZNDOKQONC4OGNRQ
+  secret_access_key:
+    secure: PZFsjcjNVWj0bO/jZdhRsXQu7g0yebMfADgP66shG/qZ/TMS/FbOnypxiz23bLlv2K84w9BPxcGr2tZMRfzBz3opEggWYzkKmykHRQVgW1CpiGDUsk/VUlHJQNyBO+FIq3gq46RfdO6G/33MJl91jsUd071HjUWP7t7WNeyc/JkUmtrMI2GL6xOB6Qk1J/Jj9dkUILYY7ZFXxk5QwlWRsU/QAKfyYgjPL/Z84+EOb+HdPiWGwnYsI20vCJcsXm2EnBEotb/g9DARMSKAsoDkehITNX8iwyrZe+R/j5ynQEYScKUg7RtRzGtnbgh0AkZ99XlzC676nAqP/izeSPo8RAPeQV29oZkVC1NhOEedyQENtK4rDtA80JQ9e3H4tvXqxbymldJIhTfvygKEU4fplUFsqmImoH7QkSUTtgIBs5zpkpptPNaimGttd20SmULKxJsDqeohdzVnRTcq3qa5I3244HaEpMn+fLwFuvtboLP9RcntfIHGZ5IB9BLKQgBrXREG6CRvhcGxh5nXkXUucO6yI2LKk5Gx515KazGzBg7YfGH3MB3SJ5jYxY1/roR1Dyw4CUGg3hEYl7X75YgL20bmkDIHwBbo/0PDV0yXj7Ton25FNimWyMPPpHpTFVmo/S/uXLlR/PfzM9FevNNR/L9Cg9V1co75HzC/dsFV4Nk=
+  bucket: travis-artifact
+  acl: ''
+  on:
+    repo: fluiddynamics/urban-octo-spork
+  skip_cleanup: true
