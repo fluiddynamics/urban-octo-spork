@@ -7,7 +7,7 @@ before_script:
 - cd coq-8.5pl3
 - ./configure -prefix /usr/local
 - #make
-- sudo make install
+- #sudo make install
 script:
 - echo Hello, World!!
 deploy:
