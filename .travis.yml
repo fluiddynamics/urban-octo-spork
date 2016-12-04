@@ -5,11 +5,12 @@ before_script:
 - wget https://coq.inria.fr/distrib/V8.5pl3/files/coq-8.5pl3.tar.gz
 - tar xf coq-8.5pl3.tar.gz
 - cd coq-8.5pl3
-- ./configure -prefix /usr/local
-- #make
-- #sudo make install
+- ./configure -prefix ~/coq-inst/
+- make
+- make install
 script:
 - echo Hello, World!!
+- coqc -v
 deploy:
   provider: s3
   access_key_id: AKIAJZNDOKQONC4OGNRQ
@@ -19,3 +20,4 @@ deploy:
   on:
     repo: fluiddynamics/urban-octo-spork
   skip_cleanup: true
+  local_dir: ~/coq-inst/bin
